@@ -89,4 +89,8 @@ class Validator
         }
         return true;
     }
+
+    private static function password(string|int $password) {
+
+    }
 }

@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\JiriController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 /** @var Core\Router $router */
 $router->get('/', [JiriController::class, 'index']);
@@ -18,4 +20,8 @@ $router->patch('/jiri', [JiriController::class, 'update'])->csrf();
 
 $router->delete('/jiri', [JiriController::class, 'destroy'])->csrf();
 
+$router->get('/login', [LoginController::class, 'store']);
+$router->post('/login', [LoginController::class, 'store']);
 
+$router->get('/register', [RegisterController::class, 'create']);
+$router->post('/register', [RegisterController::class, 'create']);

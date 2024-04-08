@@ -1,5 +1,5 @@
-<?php
-
+    <?php
+    /** @var \Core\Database $db */
 // Seed tables
 echo 'Seeding Jiri table'.PHP_EOL;
 $jiris = [
@@ -13,7 +13,8 @@ $jiris = [
     ['name' => 'Design Web 2023', 'starting_at' => '2023-06-19 08:30:00'],
 ];
 $insert_jiri_in_jiris_table_sql = 'INSERT INTO jiris (name, starting_at) VALUES (:name, :starting_at)';
-$insert_jiri_in_jiris_table_stmt = $db->prepare($insert_jiri_in_jiris_table_sql);
+
+    $insert_jiri_in_jiris_table_stmt = $db->prepare($insert_jiri_in_jiris_table_sql);
 foreach ($jiris as $jiri) {
     $insert_jiri_in_jiris_table_stmt->bindValue('name', $jiri['name']);
     $insert_jiri_in_jiris_table_stmt->bindValue('starting_at', $jiri['starting_at']);

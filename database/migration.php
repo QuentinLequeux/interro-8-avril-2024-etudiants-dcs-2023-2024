@@ -30,5 +30,21 @@ $create_jiri_table_sql = <<<SQL
     );
 SQL;
 
+echo 'Creating Users table'.PHP_EOL;
+$create_users_table_sql = <<<SQL
+    create table users
+    (
+        id int auto_increment
+        primary key,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        created_at timestamp default CURRENT_TIMESTAMP null,
+        updated_at timestamp default CURRENT_TIMESTAMP null on update CURRENT_TIMESTAMP
+    )
+SQL;
+
 $db->exec($create_jiri_table_sql);
 echo 'Jiri table created'.PHP_EOL;
+
+$db->exec($create_users_table_sql);
+echo 'Users table created'.PHP_EOL;

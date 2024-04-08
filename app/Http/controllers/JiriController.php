@@ -15,7 +15,7 @@ class JiriController
     public function __construct()
     {
         try {
-            $this->jiri = new Jiri(base_path('.env.local.ini'));
+            $this->jiri = new Jiri(base_path('..env.local.ini'));
         } catch (FileNotFoundException $exception) {
             die($exception->getMessage());
         }
